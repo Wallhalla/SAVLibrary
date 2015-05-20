@@ -1,0 +1,6 @@
+*.vcxproj
+*.*.filters
+*.log
+Test.cpp
+Test.h
+Debug/
