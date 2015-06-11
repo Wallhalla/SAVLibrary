@@ -1,7 +1,7 @@
 
 #### Project SAV (Sorting Algorithm Visualizer) ####
 
-#Version: 1.0.15
+#Version: 1.1.0
 #Publisher: Fabian Sonczeck, Germany
 
 #Written language: c++
@@ -97,12 +97,12 @@ it returns the 2 indices of the vector which will be compared next
 ## void Func2(int,int)
 
 This function will fire after a comparison were performed,
-it returns the 2 compared indices of the vector, where the second int is the bigger one.
+it returns the 2 compared indices of the vector, where the second int param is the bigger one.
 
 
-## void Func3()
+## void Func3(int,int)
 
-This function notice the user that the last known compared indices were permutated.
+This function notice the user that the int params aka indices were permutated.
 
 
 
