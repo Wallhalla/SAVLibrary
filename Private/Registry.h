@@ -53,8 +53,8 @@ private:
 
 	/**
 	* The Delegate which returns the indices in Array after comparison
-	* @param: the index which currently stores the iterator index
-	* @param: the index which currently stores the lowest value in array	
+	* @param: the index with the smaller index
+	* @param: the index with the bigger index
 	*/
 	PostComparisonDelegate target_FuncPostComparison;
 

@@ -27,9 +27,9 @@ namespace Algorithms
 			vObjects.clear();
 			vObjects = Input;
 		}
-		virtual const vector<int>* Perform() override
+		virtual const vector<vector<int>> Perform() override
 		{
-			vector<int>* Output;
+			vector<vector<int>> Output;
 
 			if (vObjects.empty())
 			{
@@ -51,20 +51,20 @@ namespace Algorithms
 					// Callback!
 					if (AlgorithmModule<T>::HasRegisteredCallbacks())
 					{
-						AlgorithmModule<T>::GetCallbackContainer()->Execute_PreComparison(i, j);
+						AlgorithmModule<T>::GetCallbackContainer()->Execute_PreComparison(min, j);
 					}
 
 					// check for a smaller value in array
 					if (vObjects[j] < vObjects[min])
 					{
-						min = j;
-					}
+						// Callback!
+						if (AlgorithmModule<T>::HasRegisteredCallbacks())
+						{
+							AlgorithmModule<T>::GetCallbackContainer()->Execute_PostComparison(j, min);
+						}
 
-					// Callback!
-					if (AlgorithmModule<T>::HasRegisteredCallbacks())
-					{
-						AlgorithmModule<T>::GetCallbackContainer()->Execute_PostComparison(i, min);
-					}
+						min = j;
+					}				
 				}
 
 				if (min != i)
