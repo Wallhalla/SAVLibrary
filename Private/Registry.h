@@ -7,7 +7,7 @@ public:
 	// Declaration of Delegates
 	typedef void(T::*ElementsToCompareDelegate)(int index1, int index2);
 	typedef void(T::*PostComparisonDelegate)(int index1, int index2);
-	typedef void(T::*PostPermutationDelegate)();
+	typedef void(T::*PostPermutationDelegate)(int index1, int index2);
 
 	// ctor
 	AlgorithmCallbackContainer<T>(T* Object, ElementsToCompareDelegate func1, PostComparisonDelegate func2, PostPermutationDelegate func3)
@@ -26,9 +26,9 @@ public:
 	{
 		(target_Object->*target_FuncPostComparison)(index1, index2);
 	}
-	void Execute_PostPermutation() const
+	void Execute_PostPermutation(int index1, int index2) const
 	{
-		(target_Object->*target_FuncPostPermutation)();
+		(target_Object->*target_FuncPostPermutation)(index1, index2);
 	}
 
 	void CleanUp()

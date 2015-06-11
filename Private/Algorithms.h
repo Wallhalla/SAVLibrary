@@ -77,7 +77,7 @@ namespace Algorithms
 					// Callback!
 					if (AlgorithmModule<T>::HasRegisteredCallbacks())
 					{
-						AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation();
+						AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation(i, min);
 					}
 				}
 			}
@@ -129,7 +129,7 @@ namespace Algorithms
 					// Callback!
 					if (AlgorithmModule<T>::HasRegisteredCallbacks())
 					{
-						AlgorithmModule<T>::GetCallbackContainer()->Execute_PreComparison(i, j);
+						AlgorithmModule<T>::GetCallbackContainer()->Execute_PreComparison(j, i);
 					}
 
 					if (vObjects[i] < vObjects[j])
@@ -155,7 +155,7 @@ namespace Algorithms
 						// Callback!
 						if (AlgorithmModule<T>::HasRegisteredCallbacks())
 						{
-							AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation();
+							AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation(k - 1, k);
 						}
 					}
 					vObjects[j] = save;
@@ -227,7 +227,7 @@ namespace Algorithms
 						// Callback!
 						if (AlgorithmModule<T>::HasRegisteredCallbacks())
 						{
-							AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation();
+							AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation(j, j + 1);
 						}
 
 						swapped = true;
@@ -328,7 +328,7 @@ namespace Algorithms
 					// Callback!
 					if (AlgorithmModule<T>::HasRegisteredCallbacks())
 					{
-						AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation();
+						AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation(i,j);
 					}
 				}
 			};
@@ -465,7 +465,7 @@ namespace Algorithms
 					// @ Callback!
 					if (AlgorithmModule<T>::HasRegisteredCallbacks())
 					{
-						AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation();
+						AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation(i1, i2);
 					}
 				}
 				else 
@@ -485,25 +485,13 @@ namespace Algorithms
 			{
 				/* copy remainder of list1 */
 				list3.push_back(list1[i1]);
-				i1++;
-
-				// @ Callback!
-				if (AlgorithmModule<T>::HasRegisteredCallbacks())
-				{
-					AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation();
-				}
+				i1++;				
 			}
 			while (i2 < size2) 
 			{
 				/* copy remainder of list2 */
 				list3.push_back(list2[i2]);
-				i2++;
-
-				// @ Callback!
-				if (AlgorithmModule<T>::HasRegisteredCallbacks())
-				{
-					AlgorithmModule<T>::GetCallbackContainer()->Execute_PostPermutation();
-				}
+				i2++;				
 			}	
 
 			return 1;

@@ -77,7 +77,7 @@ public:
 	 * @param: the Delegate which returns the indices in Array after a 'true' comparison
 	 * @param: the Delegate which notifies the swap of indices in Array after a permutation
 	 */
-	static void RegisterDelegates(UserClass* CallingInstance, void(UserClass::*PreCompDel)(int, int), void(UserClass::*PostCompDel)(int, int), void(UserClass::*PostPermDel)())
+	static void RegisterDelegates(UserClass* CallingInstance, void(UserClass::*PreCompDel)(int, int), void(UserClass::*PostCompDel)(int, int), void(UserClass::*PostPermDel)(int,int))
 	{
 		CallbackContainer = new AlgorithmCallbackContainer<UserClass>(CallingInstance, PreCompDel, PostCompDel, PostPermDel);
 
