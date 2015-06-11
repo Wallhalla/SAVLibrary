@@ -27,9 +27,9 @@ namespace Algorithms
 			vObjects.clear();
 			vObjects = Input;
 		}
-		virtual const vector<vector<int>> Perform() override
+		virtual const vector<int>* Perform() override
 		{
-			vector<vector<int>> Output;
+			vector<int>* Output;
 
 			if (vObjects.empty())
 			{

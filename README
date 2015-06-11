@@ -1,9 +1,7 @@
 
-
-
 #### Project SAV (Sorting Algorithm Visualizer) ####
 
-#Version: 1.0
+#Version: 1.0.15
 #Publisher: Fabian Sonczeck, Germany
 
 #Written language: c++
@@ -40,7 +38,7 @@ This gives the opportunity f.e. to a gui to visualize whats happening within the
 There is no installation or anything needed for this module. The only things you need to do are the following:
 
 - Add the 2 Folders "Private" and "Public" to your Project.
-- In the File from where you want to use this module add the include line: "#include "%ProjectPath%/Public/AlgorithmModule.h" to your file.
+- In the File from where you want to use this module add the include line: #include "%ProjectPath%/Public/AlgorithmModule.h to your file.
 - you don´t need to include the "Private" folder
 
 
@@ -55,12 +53,14 @@ In order to use the module within your code project, you need 3 steps to do:
 
 STEP 1: Create an algorithm instance by doing...
 
+NOTE: MyClass is not a part of the Module, it represents a class out of your own project, which wishes to use this module.
+
 	class MyClass
 	{
 	[...]
 
 	// Get an Algorithm Instance
-	ISortAlgorithm* myInstance = AlgorithmModule<MyClass>::CreateSortInstanceOf(EAlgorithm::(...)SORT);*
+	ISortAlgorithm* myInstance = AlgorithmModule<MyClass>::CreateSortInstanceOf(EAlgorithm::(...)SORT);
 	}
 
 
@@ -75,7 +75,7 @@ STEP 3: Let the algorithm run
 
 	myInstance->Perform();
 
-	NOTE: Perform() returns a vector<vectory<int>>, so you can get the sorted vector if wished.
+	NOTE: Perform() returns a vector<vector><int>>, so you can get the sorted vector if wished.
 
 
 
@@ -205,14 +205,3 @@ QUICKSORT
 
 
 Date 2015-05-20, all rights reserved by Fabian Sonczeck
-
-
-
-
-
-
-
-
-
-
-############################################################### END of README ###############################################################
