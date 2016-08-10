@@ -1,8 +1,8 @@
 
 # Project SAV (Sorting Algorithm Visualizer)
 
-#Version: 1.1.0
-#Publisher: Fabian Sonczeck, Germany
+### Version: 1.1.0
+### Publisher: Fabian Sonczeck, Germany
 
 Written language: c++
 
@@ -21,7 +21,7 @@ Written language: c++
 
 
 ################################################################
-# 1. Module Description #######################################
+# 1. Module Description
 ################################################################
 
 This module gives the opportunity to run various sorting algorithms, regardless if they are implemented iterative or by a divide-conquer principle.
@@ -32,7 +32,7 @@ This gives the opportunity f.e. to a gui to visualize whats happening within the
 
 
 ################################################################
-# 2. Installation ############################################
+# 2. Installation
 ################################################################
 
 There is no installation or anything needed for this module. The only things you need to do are the following:
@@ -45,43 +45,48 @@ There is no installation or anything needed for this module. The only things you
 
 
 ################################################################
-# 3. Usage ###################################################
+# 3. Usage
 ################################################################
 
 In order to use the module within your code project, you need 3 steps to do:
 
-
+<b>
 STEP 1: Create an algorithm instance by doing...
+</b>
 
+<i>
 NOTE: MyClass is not a part of the Module, it represents a class out of your own project, which wishes to use this module.
+</i>
 
->>	class MyClass
->>	{
->>	[...]
->>
->>	// Get an Algorithm Instance
->>	ISortAlgorithm* myInstance = AlgorithmModule<MyClass>::CreateSortInstanceOf(EAlgorithm::(...)SORT);
->>	}
+	class MyClass
+	{
+		//[...]
+
+		// Get an Algorithm Instance
+		ISortAlgorithm* myInstance = AlgorithmModule<MyClass>::CreateSortInstanceOf(EAlgorithm::(...)SORT);
+	}
 
 
-
+<b>
 STEP 2: Give your algorithm instance a field it can sort. It expects a vector<int>
+</b>
 
->>	myInstance->Initialize(myVector);
+	myInstance->Initialize(myVector);
 
 
-
+<b>
 STEP 3: Let the algorithm run
 
->>	myInstance->Perform();
+	myInstance->Perform();
 
->>	NOTE: Perform() returns a vector<vector><int>>, so you can get the sorted vector if wished.
+	NOTE: Perform() returns a vector<vector><int>>, so you can get the sorted vector if wished.
 
 
-
+<b>
 STEP 4 (optional) : Register function which fires within an algorithm
-	
->>	AlgorithmModule<MyClass>::RegisterDelegates(myClassInstance, &MyClass::Func1, &MyClass::Func2, &MyClass::Func3);
+</b>	
+
+	AlgorithmModule<MyClass>::RegisterDelegates(myClassInstance, &MyClass::Func1, &MyClass::Func2, &MyClass::Func3);
 	
 
 You can register 3 function with the following pattern:
@@ -108,7 +113,7 @@ This function notice the user that the int params aka indices were permutated.
 * see 5. Reference for the enum entries
 
 ################################################################
-### 4. Extension - How to extend the module #################### 
+# 4. Extension - How to extend the module
 ################################################################
 
 
@@ -186,21 +191,21 @@ you can use the following template to copy into the file, and replace "MySortAlg
 
 
 ################################################################
-### 5. Reference ###############################################
+# 5. Reference
 ################################################################
 
 
 EAlgorithm currently has:
 
-SELECTIONSORT,
-INSERTSORT,
-BUBBLESORT,
-MERGESORT,
-QUICKSORT
+- SELECTIONSORT
+- INSERTSORT
+- BUBBLESORT
+- MERGESORT
+- QUICKSORT
 
 
 
 
 
 
-Date 2015-05-20, all rights reserved by Fabian Sonczeck
+### Date 2015-05-20, all rights reserved by Fabian Sonczeck
