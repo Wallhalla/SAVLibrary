@@ -76,7 +76,7 @@ STEP 2: Give your algorithm instance a field it can sort. It expects a vector<in
 
 <b>
 STEP 3: Let the algorithm run
-
+</b>
 	myInstance->Perform();
 
 	NOTE: Perform() returns a vector<vector><int>>, so you can get the sorted vector if wished.
