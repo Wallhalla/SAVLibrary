@@ -92,19 +92,19 @@ STEP 4 (optional) : Register function which fires within an algorithm
 You can register 3 function with the following pattern:
 
 
-## void Func1(int,int)
+### void Func1(int,int)
 
 This function will fire when the next comparison is expected, 
 it returns the 2 indices of the vector which will be compared next
 
 
-## void Func2(int,int)
+### void Func2(int,int)
 
 This function will fire after a comparison were performed,
 it returns the 2 compared indices of the vector, where the second int param is the bigger one.
 
 
-## void Func3(int,int)
+### void Func3(int,int)
 
 This function notice the user that the int params aka indices were permutated.
 
