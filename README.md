@@ -1,13 +1,13 @@
 
-#### Project SAV (Sorting Algorithm Visualizer) ####
+# Project SAV (Sorting Algorithm Visualizer)
 
 #Version: 1.1.0
 #Publisher: Fabian Sonczeck, Germany
 
-#Written language: c++
+Written language: c++
 
 
-####Table of Contents
+# Table of Contents
 
 1. Module Description
 2. Installation    
@@ -21,7 +21,7 @@
 
 
 ################################################################
-## 1. Module Description #######################################
+# 1. Module Description #######################################
 ################################################################
 
 This module gives the opportunity to run various sorting algorithms, regardless if they are implemented iterative or by a divide-conquer principle.
@@ -32,7 +32,7 @@ This gives the opportunity f.e. to a gui to visualize whats happening within the
 
 
 ################################################################
-### 2. Installation ############################################
+# 2. Installation ############################################
 ################################################################
 
 There is no installation or anything needed for this module. The only things you need to do are the following:
@@ -45,7 +45,7 @@ There is no installation or anything needed for this module. The only things you
 
 
 ################################################################
-### 3. Usage ###################################################
+# 3. Usage ###################################################
 ################################################################
 
 In order to use the module within your code project, you need 3 steps to do:
@@ -55,34 +55,33 @@ STEP 1: Create an algorithm instance by doing...
 
 NOTE: MyClass is not a part of the Module, it represents a class out of your own project, which wishes to use this module.
 
-	class MyClass
-	{
-	[...]
-
-	// Get an Algorithm Instance
-	ISortAlgorithm* myInstance = AlgorithmModule<MyClass>::CreateSortInstanceOf(EAlgorithm::(...)SORT);
-	}
+>>	class MyClass
+>>	{
+>>	[...]
+>>
+>>	// Get an Algorithm Instance
+>>	ISortAlgorithm* myInstance = AlgorithmModule<MyClass>::CreateSortInstanceOf(EAlgorithm::(...)SORT);
+>>	}
 
 
 
 STEP 2: Give your algorithm instance a field it can sort. It expects a vector<int>
 
-	myInstance->Initialize(myVector);
+>>	myInstance->Initialize(myVector);
 
 
 
 STEP 3: Let the algorithm run
 
-	myInstance->Perform();
+>>	myInstance->Perform();
 
-	NOTE: Perform() returns a vector<vector><int>>, so you can get the sorted vector if wished.
+>>	NOTE: Perform() returns a vector<vector><int>>, so you can get the sorted vector if wished.
 
 
 
 STEP 4 (optional) : Register function which fires within an algorithm
-
 	
-	AlgorithmModule<MyClass>::RegisterDelegates(myClassInstance, &MyClass::Func1, &MyClass::Func2, &MyClass::Func3);
+>>	AlgorithmModule<MyClass>::RegisterDelegates(myClassInstance, &MyClass::Func1, &MyClass::Func2, &MyClass::Func3);
 	
 
 You can register 3 function with the following pattern:
